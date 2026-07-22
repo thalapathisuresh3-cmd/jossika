@@ -276,3 +276,223 @@ document.body.style.opacity=1;
 
 };
 ```
+```javascript
+/* ==========================================================
+   SCRIPT.JS - PART 2
+   Cake • Wish • Roses
+========================================================== */
+
+/* -----------------------------
+   Cake Page
+------------------------------ */
+
+const blowBtn = document.getElementById("blowBtn");
+const flame = document.getElementById("flame");
+const smoke = document.getElementById("smoke");
+
+if (blowBtn) {
+
+    blowBtn.addEventListener("click", function () {
+
+        blowBtn.disabled = true;
+
+        if (flame) {
+            flame.style.display = "none";
+        }
+
+        if (smoke) {
+            smoke.style.display = "block";
+        }
+
+        /* Confetti */
+
+        for (let i = 0; i < 80; i++) {
+
+            createCakeConfetti();
+
+        }
+
+        setTimeout(function () {
+
+            openPage("wish.html");
+
+        }, 2500);
+
+    });
+
+}
+
+/* -----------------------------
+Cake Confetti
+------------------------------ */
+
+function createCakeConfetti() {
+
+    let confetti = document.createElement("div");
+
+    confetti.style.position = "fixed";
+
+    confetti.style.width = "10px";
+
+    confetti.style.height = "10px";
+
+    confetti.style.borderRadius = "50%";
+
+    const colors = [
+        "#ff4d6d",
+        "#ffd166",
+        "#4dabf7",
+        "#8ce99a",
+        "#ffffff"
+    ];
+
+    confetti.style.background =
+        colors[Math.floor(Math.random() * colors.length)];
+
+    confetti.style.left =
+        Math.random() * window.innerWidth + "px";
+
+    confetti.style.top = "-20px";
+
+    document.body.appendChild(confetti);
+
+    let duration = 2000 + Math.random() * 2000;
+
+    confetti.animate(
+        [
+            {
+                transform: "translateY(0px) rotate(0deg)",
+                opacity: 1
+            },
+            {
+                transform:
+                    `translateY(${window.innerHeight + 100}px) rotate(720deg)`,
+                opacity: 0
+            }
+        ],
+        {
+            duration: duration,
+            easing: "linear"
+        }
+    );
+
+    setTimeout(function () {
+
+        confetti.remove();
+
+    }, duration);
+
+}
+
+/* -----------------------------
+Wish Page Countdown
+------------------------------ */
+
+const countdown = document.getElementById("countdown");
+
+if (countdown) {
+
+    let number = 3;
+
+    countdown.innerHTML = number;
+
+    const timer = setInterval(function () {
+
+        number--;
+
+        if (number > 0) {
+
+            countdown.innerHTML = number;
+
+        } else {
+
+            countdown.innerHTML = "❤️";
+
+            clearInterval(timer);
+
+            setTimeout(function () {
+
+                openPage("roses.html");
+
+            }, 1200);
+
+        }
+
+    }, 1000);
+
+}
+
+/* -----------------------------
+Rose Petals
+------------------------------ */
+
+function createPetal() {
+
+    const petal = document.createElement("div");
+
+    petal.className = "petal";
+
+    petal.innerHTML = "🌹";
+
+    petal.style.left =
+        Math.random() * 100 + "vw";
+
+    petal.style.animationDuration =
+        (6 + Math.random() * 5) + "s";
+
+    petal.style.fontSize =
+        (18 + Math.random() * 18) + "px";
+
+    document.body.appendChild(petal);
+
+    setTimeout(function () {
+
+        petal.remove();
+
+    }, 11000);
+
+}
+
+if (document.body.classList.contains("rose-page")) {
+
+    setInterval(function () {
+
+        createPetal();
+
+    }, 700);
+
+}
+
+/* -----------------------------
+Background Music
+------------------------------ */
+
+const bgMusic = document.getElementById("bgMusic");
+
+if (bgMusic) {
+
+    document.addEventListener("click", function () {
+
+        bgMusic.play().catch(function(){});
+
+    }, { once: true });
+
+}
+
+/* -----------------------------
+Continue Button
+------------------------------ */
+
+const continueBtn =
+document.querySelector(".continue-btn");
+
+if (continueBtn) {
+
+    continueBtn.addEventListener("click", function () {
+
+        openPage("memories.html");
+
+    });
+
+}
+```
