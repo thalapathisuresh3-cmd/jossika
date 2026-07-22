@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday ❤️</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1 class="title">
+            Happy Birthday
+        </h1>
+
+        <h2 class="name">
+            Jossika ❤️
+        </h2>
+
+        <h3 class="nickname">
+            (My Kutty Paiya)
+        </h3>
+
+        <img src="images/jossika.jpg"
+             class="birthday-image"
+             alt="Jossika">
+
+        <p class="question">
+            Are you excited for what's next?
+        </p>
+
+        <div class="buttons">
+
+            <button class="yesBtn">
+                YES ❤️
+            </button>
+
+            <button class="noBtn">
+                NO 😅
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const yes=document.querySelector(".yesBtn");
+const no=document.querySelector(".noBtn");
+
+yes.onclick=()=>{
+
+window.location.href="balloons.html";
+
+}
+
+no.addEventListener("mouseover",()=>{
+
+const x=Math.random()*250-120;
+const y=Math.random()*180-90;
+
+no.style.transform=`translate(${x}px,${y}px)`;
+
+});
+
+no.addEventListener("click",()=>{
+
+alert("No chance 😝\nYou have to click YES ❤️");
+
+});
+
+</script>
+
+</body>
+</html>
