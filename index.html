@@ -58,33 +58,6 @@
 
 </div>
 
-<script>
-
-const yes=document.querySelector(".yesBtn");
-const no=document.querySelector(".noBtn");
-
-yes.onclick=()=>{
-
-window.location.href="balloons.html";
-
-}
-
-no.addEventListener("mouseover",()=>{
-
-const x=Math.random()*250-120;
-const y=Math.random()*180-90;
-
-no.style.transform=`translate(${x}px,${y}px)`;
-
-});
-
-no.addEventListener("click",()=>{
-
-alert("No chance 😝\nYou have to click YES ❤️");
-
-});
-
 <script src="js/script.js"></script>
-
 </body>
 </html>
