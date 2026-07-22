@@ -1,0 +1,94 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pop the Balloons ❤️</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="balloon-page">
+
+<div class="container">
+
+    <h1 class="balloon-title">
+        🎈 Pop All 4 Balloons 🎈
+    </h1>
+
+    <p class="balloon-subtitle">
+        Every balloon has a special word...
+    </p>
+
+    <div class="balloon-container">
+
+        <div class="balloon red" onclick="popBalloon(this)">
+            <span>You</span>
+        </div>
+
+        <div class="balloon blue" onclick="popBalloon(this)">
+            <span>Are</span>
+        </div>
+
+        <div class="balloon yellow" onclick="popBalloon(this)">
+            <span>So</span>
+        </div>
+
+        <div class="balloon pink" onclick="popBalloon(this)">
+            <span>Special</span>
+        </div>
+
+    </div>
+
+    <p id="status">
+        Balloons Popped : 0 / 4
+    </p>
+
+</div>
+
+<script>
+
+let popped = 0;
+
+function popBalloon(balloon){
+
+    if(balloon.classList.contains("popped"))
+        return;
+
+    balloon.classList.add("popped");
+
+    balloon.innerHTML="💥";
+
+    popped++;
+
+    document.getElementById("status").innerHTML =
+    "Balloons Popped : " + popped + " / 4";
+
+    if(popped==4){
+
+        document.getElementById("status").innerHTML =
+        "❤️ You're So Special ❤️";
+
+        setTimeout(function(){
+
+            window.location.href="cake.html";
+
+        },1000);
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>
+```
