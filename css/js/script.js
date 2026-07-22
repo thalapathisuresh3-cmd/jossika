@@ -1,4 +1,4 @@
-```javascript
+javascript
 /* ==========================================================
    HAPPY BIRTHDAY WEBSITE
    SCRIPT.JS - PART 1
@@ -275,8 +275,8 @@ document.body.style.opacity=1;
 },100);
 
 };
-```
-```javascript
+
+javascript
 /* ==========================================================
    SCRIPT.JS - PART 2
    Cake • Wish • Roses
@@ -495,8 +495,8 @@ if (continueBtn) {
     });
 
 }
-```
-```javascript
+
+javascript
 /* ==========================================================
    SCRIPT.JS - PART 3
    Memories + Letter
@@ -696,8 +696,8 @@ letterBox.classList.toggle("glow");
 },2500);
 
 }
-```
-```javascript
+
+javascript
 /* ==========================================================
    SCRIPT.JS - PART 4
    Final Page Celebration
@@ -870,4 +870,4 @@ console.log(
 "%cMade with ❤️ by Suresh",
 "font-size:16px;color:#ff6699;"
 );
-```
+
