@@ -1,0 +1,127 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday ❤️</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="final-page">
+
+<div id="hearts"></div>
+
+<div class="final-container">
+
+    <h1 class="final-title">
+        🎉 Happy Birthday 🎉
+    </h1>
+
+    <h2 class="final-name">
+        My Kutty Paiya ❤️
+    </h2>
+
+    <img src="images/final-photo.jpg"
+         class="final-photo"
+         alt="Our Photo">
+
+    <p class="final-message">
+
+        Thank you for coming into my life.
+
+        Every smile of yours makes my day brighter.
+
+        Every hug feels like home.
+
+        Every memory with you is my favorite memory.
+
+        I hope this birthday brings you endless happiness,
+        countless smiles,
+        and everything you've ever wished for.
+
+        You deserve the whole world.
+
+        I Love You Forever ❤️
+
+    </p>
+
+    <button id="heartBtn">
+
+        ❤️ Forever & Always ❤️
+
+    </button>
+
+</div>
+
+<div id="popup" class="popup">
+
+    <div class="popup-box">
+
+        <h1>❤️</h1>
+
+        <h2>I LOVE YOU</h2>
+
+        <h3>Forever ❤️</h3>
+
+        <p>
+
+            Happy Birthday,
+            My Beautiful Kutty Paiya.
+
+            Thank you for being my happiness.
+
+            I promise to always cherish you,
+            support you,
+            and make beautiful memories with you.
+
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+const button=document.getElementById("heartBtn");
+const popup=document.getElementById("popup");
+
+button.onclick=function(){
+
+popup.style.display="flex";
+
+};
+
+for(let i=0;i<40;i++){
+
+let heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.style.position="fixed";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.top=(100+Math.random()*30)+"vh";
+
+heart.style.fontSize=(20+Math.random()*30)+"px";
+
+heart.style.animation="floatUp "+(5+Math.random()*5)+"s linear infinite";
+
+document.body.appendChild(heart);
+
+}
+
+</script>
+
+</body>
+
+</html>
+```
