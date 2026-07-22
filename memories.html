@@ -1,0 +1,137 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sweet Moments ❤️</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="memory-page">
+
+<div class="memory-container">
+
+<h1 class="memory-title">
+Some Sweet Moments ❤️
+</h1>
+
+<p class="memory-subtitle">
+Swipe the cards →
+</p>
+
+<div id="cards">
+
+<div class="photo-card">
+<img src="images/photo1.jpg">
+</div>
+
+<div class="photo-card">
+<img src="images/photo2.jpg">
+</div>
+
+<div class="photo-card">
+<img src="images/photo3.jpg">
+</div>
+
+<div class="photo-card">
+<img src="images/photo4.jpg">
+</div>
+
+<div class="photo-card">
+<img src="images/photo5.jpg">
+</div>
+
+<div class="photo-card">
+<img src="images/photo6.jpg">
+</div>
+
+</div>
+
+<p id="swipeText">
+Swipe this photo →
+</p>
+
+</div>
+
+<script>
+
+const cards=document.querySelectorAll(".photo-card");
+
+let current=0;
+
+function showCard(){
+
+cards.forEach((card,index)=>{
+
+card.style.display=index===current?"block":"none";
+
+});
+
+}
+
+showCard();
+
+document.addEventListener("keydown",function(e){
+
+if(e.key==="ArrowRight"||e.key==="ArrowLeft"){
+
+current++;
+
+if(current<cards.length){
+
+showCard();
+
+}else{
+
+window.location.href="letter.html";
+
+}
+
+}
+
+});
+
+let startX=0;
+
+document.addEventListener("touchstart",(e)=>{
+
+startX=e.touches[0].clientX;
+
+});
+
+document.addEventListener("touchend",(e)=>{
+
+let endX=e.changedTouches[0].clientX;
+
+if(Math.abs(startX-endX)>60){
+
+current++;
+
+if(current<cards.length){
+
+showCard();
+
+}else{
+
+window.location.href="letter.html";
+
+}
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>
+```
