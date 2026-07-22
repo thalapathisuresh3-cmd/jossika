@@ -1,0 +1,85 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blow the Candle ❤️</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="cake-page">
+
+<div class="cake-container">
+
+    <h1 class="cake-title">
+        🎂 Blow the Candle
+    </h1>
+
+    <h2 class="cake-subtitle">
+        Kutty Paiya ❤️
+    </h2>
+
+    <p class="cake-text">
+        Make a wish before blowing the candle...
+    </p>
+
+    <div class="cake-box">
+
+        <img src="images/cake.png"
+             class="cake-image"
+             alt="Birthday Cake">
+
+        <div id="flame" class="flame">
+            🔥
+        </div>
+
+        <div id="smoke" class="smoke">
+            ☁️
+        </div>
+
+    </div>
+
+    <button id="blowBtn">
+        💨 Blow Candle
+    </button>
+
+</div>
+
+<script>
+
+const flame=document.getElementById("flame");
+const smoke=document.getElementById("smoke");
+const button=document.getElementById("blowBtn");
+
+button.onclick=function(){
+
+    button.disabled=true;
+
+    flame.style.display="none";
+
+    smoke.style.display="block";
+
+    document.body.classList.add("celebrate");
+
+    setTimeout(function(){
+
+        window.location.href="wish.html";
+
+    },2500);
+
+}
+
+</script>
+
+</body>
+
+</html>
+```
